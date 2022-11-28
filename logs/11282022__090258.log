@@ -1,0 +1,3 @@
+[ 2022-11-28 09:02:58,851 ] 8 root - INFO - Starting the try block
+[ 2022-11-28 09:02:58,851 ] 13 root - INFO - Starting the Exception block
+[ 2022-11-28 09:02:58,851 ] 20 root - INFO - Error occurred python script name [main.py] line number [9] error message [division by zero]
