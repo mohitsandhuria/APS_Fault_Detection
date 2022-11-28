@@ -1,0 +1,3 @@
+[ 2022-11-28 20:47:16,766 ] 4 root - INFO - importing environment variables from .env files
+[ 2022-11-28 20:47:17,214 ] 10 root - INFO - Reading Data from Database {database_name} and Collection {collection_name}
+[ 2022-11-28 20:47:17,214 ] 15 root - WARNING - Error occurred python script name [/config/workspace/sensor/utils/__init__.py] line number [11] error message [find() takes at least 1 argument (0 given)]
