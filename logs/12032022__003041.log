@@ -1,0 +1,8 @@
+[ 2022-12-03 00:30:41,008 ] 4 root - INFO - importing environment variables from .env files
+[ 2022-12-03 00:30:41,894 ] 20 root - INFO - Exporting collection data as pandas dataframe
+[ 2022-12-03 00:30:41,894 ] 19 root - INFO - Reading Data from Database aps and Collection sensor
+[ 2022-12-03 00:30:41,897 ] 21 root - INFO - Found columns: Index([], dtype='object')
+[ 2022-12-03 00:30:41,897 ] 25 root - INFO - Rows and columns: (0, 0)
+[ 2022-12-03 00:30:41,897 ] 29 root - INFO - Create feature store folder if not available
+[ 2022-12-03 00:30:41,899 ] 36 root - INFO - split dataset into train and test set
+[ 2022-12-03 00:30:41,899 ] 19 root - WARNING - Error occurred python script name [/config/workspace/sensor/components/data_ingestion.py] line number [38] error message [With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.]
