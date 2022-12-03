@@ -7,7 +7,7 @@ class DataIngestionArtifact:
     test_file_path:str
 
 class DataValidationArtifact:
-    pass
+    report_file_path:str
 
 class DataTransformationArtifact:
     pass
