@@ -49,15 +49,16 @@ class DataValidationConfig:
         except Exception as e:
             raise SensorException(e, sys)
 
-    def to_dict(self,):
+class DataTransformationConfig:
+    def __init__(self,training_pipeline_config:TrainingPipelineConfig):
         try:
-            return self.__dict__
+            self.data_transformation_dir=os.path.join(training_pipeline_config.artifact_dir,"data_transformation")
+            self.tranform_object_path=os.path.join(self.data_transformation_dir,"transformed","transform.pkl")
+            self.tranformed_train_path=os.path.join(self.data_transformation_dir,"transformed","")
+            self.tranformed_test_path=os.path.join(self.data_transformation_dir,"transformed","")
+            
         except Exception as e:
             raise SensorException(e, sys)
-
-
-class DataTransformationConfig:
-    pass
 
 class ModelTrainerConfig:
     pass
