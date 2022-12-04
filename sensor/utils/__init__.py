@@ -29,14 +29,23 @@ def get_collection_as_dataframe(database_name:str,collection_name:str):
         raise SensorException(e, sys)
 
 
-    def write_yaml(file_path,data):
-        try:
-            file_dir=os.path.dirname(file_path)
+def write_yaml(file_path,data):
+    try:
+        file_dir=os.path.dirname(file_path)
 
-            os.makedirs(file_dir,exist_ok=True)
+        os.makedirs(file_dir,exist_ok=True)
 
-           # with open(file_path,'w') as file_writer:
-           #     yaml.dump
+        with open(file_path,'w') as file_writer:
+            yaml.dump(data,file_writer)
 
-        except Exception as e:
-            raise SensorException(e, sys)
+    except Exception as e:
+        raise SensorException(e, sys)
+
+def convert_columns_float(df,exclude_columns)->pd.DataFrame:
+    try:
+        for column in df.columns:
+            if column not in exclude_columns:
+                df[column]=df[column].astype('float')
+        return df
+    except Exception as e:
+        raise SensorException(e, sys)
