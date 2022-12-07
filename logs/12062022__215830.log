@@ -1,0 +1,32 @@
+[ 2022-12-06 21:58:30,566 ] 4 root - INFO - importing environment variables from .env files
+[ 2022-12-06 21:58:31,535 ] 20 root - INFO - Exporting collection data as pandas dataframe
+[ 2022-12-06 21:58:31,535 ] 20 root - INFO - Reading Data from Database aps and Collection sensor
+[ 2022-12-06 21:58:35,163 ] 22 root - INFO - Found columns: Index(['_id', 'class', 'aa_000', 'ab_000', 'ac_000', 'ad_000', 'ae_000',
+       'af_000', 'ag_000', 'ag_001',
+       ...
+       'ee_002', 'ee_003', 'ee_004', 'ee_005', 'ee_006', 'ee_007', 'ee_008',
+       'ee_009', 'ef_000', 'eg_000'],
+      dtype='object', length=172)
+[ 2022-12-06 21:58:35,163 ] 24 root - INFO - Dropping id column from the dataframe
+[ 2022-12-06 21:58:35,352 ] 26 root - INFO - Rows and columns: (36188, 171)
+[ 2022-12-06 21:58:35,975 ] 29 root - INFO - Create feature store folder if not available
+[ 2022-12-06 21:58:38,348 ] 36 root - INFO - split dataset into train and test set
+[ 2022-12-06 21:58:38,895 ] 40 root - INFO - Create dataset directory if not exist
+[ 2022-12-06 21:58:38,896 ] 45 root - INFO - Save df to feature store folder
+[ 2022-12-06 21:58:41,080 ] 58 root - INFO - Data ingestion artifact: DataIngestionArtifact(feature_store_file_path='/config/workspace/artifact/12062022__215831/data_ingestion/feature_store/sensor.csv', train_file_path='/config/workspace/artifact/12062022__215831/data_ingestion/dataset/train.csv', test_file_path='/config/workspace/artifact/12062022__215831/data_ingestion/dataset/test.csv')
+[ 2022-12-06 21:58:41,426 ] 18 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Validation >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[ 2022-12-06 21:58:41,426 ] 106 root - INFO - Reading base dataframe
+[ 2022-12-06 21:58:44,266 ] 109 root - INFO - Replace na value in base df
+[ 2022-12-06 21:58:44,266 ] 111 root - INFO - Drop null values colums from base df
+[ 2022-12-06 21:58:45,190 ] 39 root - INFO - selecting column name which contains null above to 0.2
+[ 2022-12-06 21:58:45,191 ] 43 root - INFO - Columns to drop: ['ab_000', 'ad_000', 'bk_000', 'bl_000', 'bm_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cf_000', 'cg_000', 'ch_000', 'co_000', 'cr_000', 'ct_000', 'cu_000', 'cv_000', 'cx_000', 'cy_000', 'cz_000', 'da_000', 'db_000', 'dc_000']
+[ 2022-12-06 21:58:45,272 ] 114 root - INFO - Reading train dataframe
+[ 2022-12-06 21:58:45,651 ] 116 root - INFO - Reading test dataframe
+[ 2022-12-06 21:58:45,747 ] 119 root - INFO - Drop null values colums from train df
+[ 2022-12-06 21:58:45,759 ] 39 root - INFO - selecting column name which contains null above to 0.2
+[ 2022-12-06 21:58:45,759 ] 43 root - INFO - Columns to drop: ['ab_000', 'ad_000', 'bk_000', 'bl_000', 'bm_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cf_000', 'cg_000', 'ch_000', 'co_000', 'cr_000', 'ct_000', 'cu_000', 'cv_000', 'cx_000', 'cy_000', 'cz_000', 'da_000', 'db_000', 'dc_000']
+[ 2022-12-06 21:58:45,768 ] 121 root - INFO - Drop null values colums from test df
+[ 2022-12-06 21:58:45,773 ] 39 root - INFO - selecting column name which contains null above to 0.2
+[ 2022-12-06 21:58:45,773 ] 43 root - INFO - Columns to drop: ['ab_000', 'ad_000', 'bk_000', 'bl_000', 'bm_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cf_000', 'cg_000', 'ch_000', 'co_000', 'cr_000', 'ct_000', 'cu_000', 'cv_000', 'cx_000', 'cy_000', 'cz_000', 'da_000', 'db_000', 'dc_000']
+[ 2022-12-06 21:58:51,774 ] 130 root - INFO - Is all required columns present in train df
+[ 2022-12-06 21:58:51,774 ] 24 root - WARNING - Error occurred python script name [/config/workspace/sensor/components/data_validation.py] line number [131] error message ['DataValidation' object has no attribute 'is_required_columns_exists']

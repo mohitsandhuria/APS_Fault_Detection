@@ -15,9 +15,13 @@ class DataTransformationArtifact:
     tranform_object_path:str
     tranformed_train_path:str
     tranformed_test_path:str
+    target_encoder_path:str
 
+@dataclass
 class ModelTrainerArtifact:
-    pass
+    model_path:str 
+    f1_train_score:float 
+    f1_test_score:float
 
 class ModelEvaluationArtifact:
     pass
