@@ -42,7 +42,7 @@ def write_yaml(file_path,data):
     except Exception as e:
         raise SensorException(e, sys)
 
-def convert_columns_float(df,exclude_columns)->pd.DataFrame:
+def convert_columns_float(df,exclude_columns):
     try:
         for column in df.columns:
             if column not in exclude_columns:
@@ -51,7 +51,7 @@ def convert_columns_float(df,exclude_columns)->pd.DataFrame:
     except Exception as e:
         raise SensorException(e, sys)
 
-def save_object(file_path: str, obj: object) -> None:
+def save_object(file_path: str, obj: object):
     try:
         logging.info("Entered the save_object method of utils")
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
@@ -61,7 +61,7 @@ def save_object(file_path: str, obj: object) -> None:
     except Exception as e:
         raise SensorException(e, sys) from e
 
-def load_object(file_path: str, ) -> object:
+def load_object(file_path: str, ):
     try:
         if not os.path.exists(file_path):
             raise Exception(f"The file: {file_path} is not exists")

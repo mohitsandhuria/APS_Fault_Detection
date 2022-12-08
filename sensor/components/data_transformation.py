@@ -6,7 +6,7 @@ import os,sys
 import pandas as pd
 import numpy as np
 from sensor import utils
-from sklearn.preprocessing import Pipeline
+from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from imblearn.combine import SMOTETomek
 from sklearn.preprocessing import RobustScaler
@@ -24,16 +24,16 @@ class DataTransformation:
             except Exception as e:
                 raise SensorException(e, sys)
 
-    @dataclass
+    @classmethod
     def get_data_transformer(cls):
         try:
             simple_imputer=SimpleImputer(strategy='constant', fill_value=0)
             robust_scaler=RobustScaler()
 
-            constant_pipeline = Pipeline(steps=[
+            pipeline = Pipeline(steps=[
                                         ('Imputer', simple_imputer),
                                         ('RobustScaler', robust_scaler)])
-
+            return pipeline
         except Exception as e:
             raise SensorException(e, sys)
 
@@ -80,21 +80,22 @@ class DataTransformation:
             test_arr=np.c_[input_feature_test_arr, target_feature_test_arr]
 
 
-            utils.save_numpy_array_data(file_path=self.data_transformation_config.tranformed_train_path, array=train_arr)
-            utils.save_numpy_array_data(file_path=self.data_transformation_config.tranformed_test_path, array=test_arr)
+            utils.save_numpy_array_data(file_path=self.data_transformation_config.transformed_train_path, array=train_arr)
+            utils.save_numpy_array_data(file_path=self.data_transformation_config.transformed_test_path, array=test_arr)
 
-            utils.save_object(file_path=self.data_transformation_config.tranform_object_path, 
+            utils.save_object(file_path=self.data_transformation_config.transform_object_path, 
             obj=transformation_pipeline)
             utils.save_object(file_path=self.data_transformation_config.target_encoder_path,
             obj=label_encoder)
 
             data_transformation_artifact=artifact_entity.DataTransformationArtifact(
-            tranform_object_path=self.data_transformation_config.tranform_object_path, 
-            tranformed_train_path=self.data_transformation_config.tranformed_train_path, 
-            tranformed_test_path=self.data_transformation_config.tranformed_test_path, 
+            transform_object_path=self.data_transformation_config.transform_object_path, 
+            transformed_train_path=self.data_transformation_config.transformed_train_path, 
+            transformed_test_path=self.data_transformation_config.transformed_test_path, 
             target_encoder_path=self.data_transformation_config.target_encoder_path)
 
             logging.info(f"Data transformation object {data_transformation_artifact}")
 
+            return data_transformation_artifact
         except Exception as e:
             raise SensorException(e, sys)
