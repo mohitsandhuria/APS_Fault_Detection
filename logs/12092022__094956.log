@@ -1,0 +1,57 @@
+[ 2022-12-09 09:49:56,874 ] 4 root - INFO - importing environment variables from .env files
+[ 2022-12-09 09:49:58,834 ] 20 root - INFO - Exporting collection data as pandas dataframe
+[ 2022-12-09 09:49:58,834 ] 21 root - INFO - Reading Data from Database aps and Collection sensor
+[ 2022-12-09 09:50:03,209 ] 23 root - INFO - Found columns: Index(['_id', 'class', 'aa_000', 'ab_000', 'ac_000', 'ad_000', 'ae_000',
+       'af_000', 'ag_000', 'ag_001',
+       ...
+       'ee_002', 'ee_003', 'ee_004', 'ee_005', 'ee_006', 'ee_007', 'ee_008',
+       'ee_009', 'ef_000', 'eg_000'],
+      dtype='object', length=172)
+[ 2022-12-09 09:50:03,212 ] 25 root - INFO - Dropping id column from the dataframe
+[ 2022-12-09 09:50:03,446 ] 27 root - INFO - Rows and columns: (36188, 171)
+[ 2022-12-09 09:50:04,034 ] 29 root - INFO - Create feature store folder if not available
+[ 2022-12-09 09:50:06,674 ] 36 root - INFO - split dataset into train and test set
+[ 2022-12-09 09:50:07,496 ] 40 root - INFO - Create dataset directory if not exist
+[ 2022-12-09 09:50:07,496 ] 45 root - INFO - Save df to feature store folder
+[ 2022-12-09 09:50:09,752 ] 58 root - INFO - Data ingestion artifact: DataIngestionArtifact(feature_store_file_path='/config/workspace/artifact/12092022__094958/data_ingestion/feature_store/sensor.csv', train_file_path='/config/workspace/artifact/12092022__094958/data_ingestion/dataset/train.csv', test_file_path='/config/workspace/artifact/12092022__094958/data_ingestion/dataset/test.csv')
+[ 2022-12-09 09:50:10,176 ] 18 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Validation >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[ 2022-12-09 09:50:10,176 ] 106 root - INFO - Reading base dataframe
+[ 2022-12-09 09:50:13,075 ] 109 root - INFO - Replace na value in base df
+[ 2022-12-09 09:50:13,075 ] 111 root - INFO - Drop null values colums from base df
+[ 2022-12-09 09:50:13,977 ] 39 root - INFO - selecting column name which contains null above to 0.2
+[ 2022-12-09 09:50:13,978 ] 43 root - INFO - Columns to drop: ['ab_000', 'ad_000', 'bk_000', 'bl_000', 'bm_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cf_000', 'cg_000', 'ch_000', 'co_000', 'cr_000', 'ct_000', 'cu_000', 'cv_000', 'cx_000', 'cy_000', 'cz_000', 'da_000', 'db_000', 'dc_000']
+[ 2022-12-09 09:50:14,066 ] 114 root - INFO - Reading train dataframe
+[ 2022-12-09 09:50:14,471 ] 116 root - INFO - Reading test dataframe
+[ 2022-12-09 09:50:14,574 ] 119 root - INFO - Drop null values colums from train df
+[ 2022-12-09 09:50:14,585 ] 39 root - INFO - selecting column name which contains null above to 0.2
+[ 2022-12-09 09:50:14,586 ] 43 root - INFO - Columns to drop: ['ab_000', 'ad_000', 'bk_000', 'bl_000', 'bm_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cf_000', 'cg_000', 'ch_000', 'co_000', 'cr_000', 'ct_000', 'cu_000', 'cv_000', 'cx_000', 'cy_000', 'cz_000', 'da_000', 'db_000', 'dc_000']
+[ 2022-12-09 09:50:14,598 ] 121 root - INFO - Drop null values colums from test df
+[ 2022-12-09 09:50:14,602 ] 39 root - INFO - selecting column name which contains null above to 0.2
+[ 2022-12-09 09:50:14,603 ] 43 root - INFO - Columns to drop: ['ab_000', 'ad_000', 'bk_000', 'bl_000', 'bm_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cf_000', 'cg_000', 'ch_000', 'co_000', 'cr_000', 'ct_000', 'cu_000', 'cv_000', 'cx_000', 'cy_000', 'cz_000', 'da_000', 'db_000', 'dc_000']
+[ 2022-12-09 09:50:20,401 ] 130 root - INFO - Is all required columns present in train df
+[ 2022-12-09 09:50:20,401 ] 132 root - INFO - Is all required columns present in test df
+[ 2022-12-09 09:50:20,402 ] 143 root - INFO - Write reprt in yaml file
+[ 2022-12-09 09:50:20,406 ] 148 root - INFO - Data validation artifact: DataValidationArtifact(report_file_path='/config/workspace/artifact/12092022__094958/data_validation/report.yaml')
+[ 2022-12-09 09:50:21,275 ] 71 root - INFO - Before resampling in training set Input: (28950, 170) Target:(28950,)
+[ 2022-12-09 09:50:26,654 ] 73 root - INFO - After resampling in training set Input: (56094, 170) Target:(56094,)
+[ 2022-12-09 09:50:26,654 ] 75 root - INFO - Before resampling in testing set Input: (7238, 170) Target:(7238,)
+[ 2022-12-09 09:50:27,181 ] 77 root - INFO - After resampling in testing set Input: (14084, 170) Target:(14084,)
+[ 2022-12-09 09:50:27,297 ] 56 root - INFO - Entered the save_object method of utils
+[ 2022-12-09 09:50:27,301 ] 60 root - INFO - Exited the save_object method of utils
+[ 2022-12-09 09:50:27,301 ] 56 root - INFO - Entered the save_object method of utils
+[ 2022-12-09 09:50:27,302 ] 60 root - INFO - Exited the save_object method of utils
+[ 2022-12-09 09:50:27,302 ] 97 root - INFO - Data transformation object DataTransformationArtifact(transform_object_path='/config/workspace/artifact/12092022__094958/data_transformation/transformer/transformer.pkl', transformed_train_path='/config/workspace/artifact/12092022__094958/data_transformation/transformed/train.npz', transformed_test_path='/config/workspace/artifact/12092022__094958/data_transformation/transformed/test.npz', target_encoder_path='/config/workspace/artifact/12092022__094958/data_transformation/target_encoder/target_encoder.pkl')
+[ 2022-12-09 09:50:27,304 ] 41 root - INFO - Loading train and test array.
+[ 2022-12-09 09:50:27,335 ] 45 root - INFO - Splitting input and target feature from both train and test arr.
+[ 2022-12-09 09:50:27,335 ] 49 root - INFO - Train the model
+[ 2022-12-09 09:50:35,335 ] 52 root - INFO - Calculating f1 train score
+[ 2022-12-09 09:50:35,389 ] 56 root - INFO - Calculating f1 test score
+[ 2022-12-09 09:50:35,406 ] 60 root - INFO - Checking if our model is underfitting or not
+[ 2022-12-09 09:50:35,407 ] 65 root - INFO - Checking if our model is overfiiting or not
+[ 2022-12-09 09:50:35,407 ] 71 root - INFO - Saving mode object
+[ 2022-12-09 09:50:35,407 ] 56 root - INFO - Entered the save_object method of utils
+[ 2022-12-09 09:50:35,413 ] 60 root - INFO - Exited the save_object method of utils
+[ 2022-12-09 09:50:35,413 ] 75 root - INFO - Prepare the artifact
+[ 2022-12-09 09:50:35,413 ] 78 root - INFO - Model trainer artifact: ModelTrainerArtifact(model_path='/config/workspace/artifact/12092022__094958/model_trainer/model/model.pkl', f1_train_score=0.9999821724635872, f1_test_score=0.9855404438081604)
+[ 2022-12-09 09:50:35,415 ] 14 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Model Evaluation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[ 2022-12-09 09:50:35,415 ] 49 root - WARNING - name 'sys' is not defined
