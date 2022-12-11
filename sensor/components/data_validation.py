@@ -65,7 +65,7 @@ class DataValidation:
             if len(missing_columns)>0:
                 self.validation_error[report_key_name]=missing_columns
                 return False
-            return False
+            return True
         except Exception as e:
             raise SensorException(e, sys)
 

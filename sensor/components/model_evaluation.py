@@ -3,6 +3,10 @@ from sensor.entity import config_entity,artifact_entity
 from sensor.exception import SensorException
 from sensor.logger import logging
 import sys,os
+from sensor import utils
+from sklearn.metrics import f1_score
+import pandas as pd
+
 class ModelEvaluation:
 
     def __init__(self,
@@ -35,6 +39,25 @@ class ModelEvaluation:
                 logging.info(f"Model evaluation artifact: {model_eval_artifact}")
                 return model_eval_artifact
 
-            
+            transformer_path=self.model_resolver.get_latest_transformer_path()       
+            model_path=self.model_resolver.get_latest_model_path()
+            target_encoder_path=self.model_resolver.get_latest_target_encoder_path()
+
+
+            transformer=utils.load_object(file_path=transformer_path)
+            model=utils.load_object(file_path=model_path)
+            target_encoder=utils.load_object(file_path=target_encoder_path)
+
+
+            current_transformer=utils.load_object(file_path=self.data_transformation_artifact.transform_object_path)
+            current_model=utils.load_object(file_path=self.data_transformation_artifact.model_path)
+            current_target_encoder=utils.load_object(file_path=self.data_transformation_artifact.target_encoder_path)
+
+            test_df=pd.DataFrame(self.data_ingestion_artifact.test_file_path)
+            target_df=test_df[test_df]
+            #Accuracy
+            input_arr=transformer.transform(test_df)
+
+
         except Exception as e:
             raise SensorException(e,sys)
