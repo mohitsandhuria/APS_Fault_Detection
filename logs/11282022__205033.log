@@ -1,4 +1,0 @@
-[ 2022-11-28 20:50:33,117 ] 4 root - INFO - importing environment variables from .env files
-[ 2022-11-28 20:50:33,561 ] 10 root - INFO - Reading Data from Database aps and Collection sensor
-[ 2022-11-28 20:50:33,565 ] 12 root - INFO - Found columns: Index([], dtype='object')
-[ 2022-11-28 20:50:33,565 ] 16 root - INFO - Rows and columns: (0, 0)

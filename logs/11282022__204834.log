@@ -1,4 +1,0 @@
-[ 2022-11-28 20:48:34,416 ] 4 root - INFO - importing environment variables from .env files
-[ 2022-11-28 20:48:34,861 ] 10 root - INFO - Reading Data from Database {database_name} and Collection {collection_name}
-[ 2022-11-28 20:48:34,865 ] 12 root - INFO - Found columns: {df.columns}
-[ 2022-11-28 20:48:34,866 ] 16 root - INFO - Rows and columns: {df.shape}
